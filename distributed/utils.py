@@ -1128,6 +1128,8 @@ def format_bytes(n):
     >>> format_bytes(1234567890000000)
     '1.23 PB'
     """
+    if n is None:
+        return "NaN"
     if n > 1e15:
         return "%0.2f PB" % (n / 1e15)
     if n > 1e12:
